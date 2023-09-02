@@ -1,0 +1,74 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* User Management Styles */
+#user-management {
+    margin-top: 20px;
+}
+
+#username {
+    padding: 8px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Pushup Entry Styles */
+#pushup-entry {
+    margin-top: 20px;
+}
+
+#pushups {
+    padding: 8px;
+    width: 100px;
+}
+
+/* Pushup Statistics Styles */
+#pushup-stats {
+    margin-top: 20px;
+}
+
+#pushup-list {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* User List Styles */
+#pushup-list div {
+    margin-bottom: 10px;
+}
+
+/* Add this CSS to hide the edit widgets initially */
+.edit-widget {
+    display: none;
+}

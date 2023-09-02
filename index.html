@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushup Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pushup Tracker</h1>
+		
+        <!-- Landing Page -->
+        <div id="landing-page">
+            <h2>Welcome!</h2>
+            <button id="existing-user">Select Existing User</button>
+            <button id="create-user">Create New User</button>
+			<button id="admin-login-button-landing">Admin Login</button>
+            <button id="view-pushup-stats">View Pushup Statistics</button>
+        </div>
+
+        <!-- User Selection Page -->
+        <div id="user-selection" style="display: none;">
+            <h2>Select User</h2>
+            <select id="user-list"></select>
+            <button id="start-pushup-entry">Start Pushup Entry</button>
+            <button id="back-to-landing">Back to Landing Page</button>
+            <button id="delete-user">Delete User</button>
+        </div>
+
+        <!-- Pushup Entry Page -->
+        <div id="pushup-entry" style="display: none;">
+            <h2>Pushup Entry</h2>
+            <input type="number" id="pushups" placeholder="Enter Pushups">
+            <button id="log-pushup">Log Pushup</button>
+            <button id="back-to-user-selection">Back to User Selection</button>
+        </div>
+
+		<!-- Pushup Statistics Page -->
+		<div id="pushup-stats" style="display: none;">
+			<h2>Pushup Statistics</h2>
+			<div id="pushup-list"></div>
+			<button id="edit-pushup">Edit Pushup</button>
+			<button id="return-to-landing">Return to Landing Page</button>
+			
+			<!-- Add the edit widget container here -->
+			<div class="edit-widget">
+				<!-- Edit widgets go here, such as input fields and buttons -->
+				<input type="text" id="edit-count" placeholder="Edit Count">
+				<button id="save-edit">Save Edit</button>
+				<!-- Add any other edit widgets you need -->
+			</div>
+		</div>
+
+        <!-- Admin Login Page -->
+        <div id="admin-login" style="display: none;">
+            <h2>Admin Login</h2>
+            <input type="text" id="admin-username" placeholder="Username">
+            <input type="password" id="admin-password" placeholder="Password">
+            <button id="admin-login-button">Login</button>
+			<button id="admin-options-button" style="display: none;">Admin Options</button>
+			<button id="admin-back-to-landing">Back to Landing Page</button>
+        </div>
+
+        <!-- Admin Options Page -->
+        <div id="admin-options" style="display: none;">
+            <h2>Admin Options</h2>
+            <button id="reset-app-button">Reset App and Data</button>
+            <!-- Add other admin options here -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
