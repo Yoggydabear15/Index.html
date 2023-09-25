@@ -60,6 +60,55 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+// Update a user by ID (PUT request)
+app.put('/api/users/:userId', (req, res) => {
+  const userId = req.params.userId; // Extract user ID from URL parameter
+  const { username, email } = req.body;
+
+  if (!username || !email) {
+    return res.status(400).json({ error: 'Username and email are required' });
+  }
+
+  const sql = 'UPDATE users SET username = ?, email = ? WHERE id = ?';
+  const values = [username, email, userId];
+
+  db.query(sql, values, (err, result) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // User updated successfully
+    res.json({ message: 'User updated' });
+  });
+});
+
+// Delete a user by ID (DELETE request)
+app.delete('/api/users/:userId', (req, res) => {
+  const userId = req.params.userId; // Extract user ID from URL parameter
+
+  const sql = 'DELETE FROM users WHERE id = ?';
+  const values = [userId];
+
+  db.query(sql, values, (err, result) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // User deleted successfully
+    res.json({ message: 'User deleted' });
+  });
+});
+
 // Start the server
 const port = process.env.PORT || 3000; // Use the provided port or 3000 by default
 app.listen(port, () => {
